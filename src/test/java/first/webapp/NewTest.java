@@ -14,9 +14,6 @@ public class NewTest {
 	private WebDriver webDriver;
 	private final String BASE_URL="https://localhost:8090/maven-web-project";
 
-	@Test
-	public void f() {
-	}
 
 	@BeforeTest
 	public void beforeTest() {
@@ -40,10 +37,13 @@ public class NewTest {
 	public void checkId() {
 		// Load website as a new page
 		webDriver.navigate().to(BASE_URL);
-		WebElement we = webDriver.findElement(By.id("content"));
+		System.out.println(webDriver.getTitle());
 
-		System.out.println("id we: " + we.getAttribute("role"));
-		Assert.assertEquals(we.getAttribute("role"), "contentinfo");
+		Assert.assertEquals(webDriver.getTitle(), "Insert title here");
+		//WebElement we = webDriver.findElement(By.id("content"));
+
+		//System.out.println("id we: " + we.getAttribute("role"));
+		//Assert.assertEquals(we.getAttribute("role"), "contentinfo");
 	}
 
 }
