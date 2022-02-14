@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 public class NewTest {
 	// declare Selenium WebDriver
 	private WebDriver webDriver;
-	private final String BASE_URL="https://localhost:8090/maven-web-project";
+	private final String BASE_URL="http://localhost:8090/maven-web-project";
 
 
 	@BeforeTest
