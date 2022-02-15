@@ -7,6 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<properties>
+		<junit-jupiter.groupId>org.junit.jupiter</junit-jupiter.groupId>
+		<junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
+		<junit-jupiter.version>5.7.0</junit-jupiter.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -48,8 +53,12 @@
 			<version>7.0.0</version>
 			<scope>test</scope>
 		</dependency>
-
-
+		<dependency>
+			<groupId>${junit-jupiter.groupId}</groupId>
+			<artifactId>${junit-jupiter.artifactId}</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -63,13 +72,25 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
 				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					<threadCount>5</threadCount>
+					<useUnlimitedThreads>true</useUnlimitedThreads>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-testng</artifactId>
+						<version>2.22.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-surefire-provider</artifactId>
+						<version>1.2.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
