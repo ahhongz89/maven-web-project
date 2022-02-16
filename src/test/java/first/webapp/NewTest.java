@@ -36,10 +36,10 @@ public class NewTest {
 	@Test
 	public void checkId() {
 		// Load website as a new page
-		webDriver.navigate().to(BASE_URL);
-		System.out.println(webDriver.getTitle());
+		//webDriver.navigate().to(BASE_URL);
+		//System.out.println(webDriver.getTitle());
 
-		Assert.assertEquals(webDriver.getTitle(), "Insert title here");
+		//Assert.assertEquals(webDriver.getTitle(), "Insert title here");
 		//WebElement we = webDriver.findElement(By.id("content"));
 
 		//System.out.println("id we: " + we.getAttribute("role"));
