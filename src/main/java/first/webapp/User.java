@@ -7,7 +7,7 @@ public class User {
     protected String language;
 
     public User() {}
-
+ 
     
     public User(String name, String password, String email, String language) {
         super();
