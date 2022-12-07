@@ -19,18 +19,18 @@ public class NewTest {
 	public void beforeTest() {
 		// Setting system properties of ChromeDriver
 		// to amend directory path base on your local file path
-		String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+		//String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
 
-		System.setProperty("webdriver.chrome.driver", chromeDriverDir);
+		//System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
 		// initialize FirefoxDriver at the start of test
-		webDriver = new ChromeDriver();
+		//webDriver = new ChromeDriver();
 	}
 
 	@AfterTest
 	public void afterTest() {
 		// Quit the ChromeDriver and close all associated window at the end of test
-		webDriver.quit();
+		//webDriver.quit();
 	}
 
 	@Test
